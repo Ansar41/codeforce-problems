@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    string press,mainn;
+    cin>>n>>press>>mainn;
+    int total=0;
+    for(int i=0;i<n;i++)
+    {
+        int dif=abs(press[i]-mainn[i]);
+        int p=press[i]-'0';
+        int m=mainn[i]-'0';
+        if(p>m)
+            swap(p,m);
+        int dif2=abs(10+p-m);
+        total+=min(dif,dif2);
+    }
+    cout<<total<<endl;
+    return 0;
+}
